@@ -36,6 +36,18 @@ const Post: NextPage<Props> = ({ Data }) => {
     return 0;
   });
 
+  // 表示数を調整する
+  const newlist = [];
+  if (actressAvList.length <= 50) {
+    for (let i = 0; i < actressAvList.length; i++) {
+      newlist.push(actressAvList[i]);
+    }
+  } else {
+    for (let i = 0; i < 50; i++) {
+      newlist.push(actressAvList[i]);
+    }
+  }
+
   return (
     <Layout
       title={`${fixedSentence.date}H-NEXTで見れる${Data.actressName}のAV作品一覧【${fixedSentence.actress}】`}
@@ -60,7 +72,7 @@ const Post: NextPage<Props> = ({ Data }) => {
         </a>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 w-11/12">
-        {actressAvList.map((content, index) => {
+        {newlist.map((content, index) => {
           return (
             <div key={content.forUrlNumber}>
               <div className="flex flex-col justify-center items-center">
