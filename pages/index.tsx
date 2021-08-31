@@ -15,7 +15,6 @@ const Actress: NextPage = () => {
       type="website"
     >
       <h1 className="text-xl sm:text-2xl text-gray-600">{`${fixedSentence.date}H-NEXTで見れる、AV女優まとめ【${actressList.length}人】`}</h1>
-      <p>{`データ数${Datas.length}`}</p>
       <div className="py-4 sm:px-4">
         <p>{fixedSentence.caution}</p>
       </div>
