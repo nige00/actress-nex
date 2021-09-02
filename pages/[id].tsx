@@ -60,7 +60,7 @@ const Post: NextPage<Props> = ({ Data }) => {
         </a>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 w-11/12">
-        {/* {actressAvList.map((content, index) => {
+        {actressAvList.map((content, index) => {
           return (
             <div key={content.forUrlNumber}>
               <div className="flex flex-col justify-center items-center">
@@ -101,7 +101,7 @@ const Post: NextPage<Props> = ({ Data }) => {
               )}
             </div>
           );
-        })} */}
+        })}
       </div>
     </Layout>
   );
@@ -109,7 +109,7 @@ const Post: NextPage<Props> = ({ Data }) => {
 
 export default Post;
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
   const paths = actressList.map((actress) => {
     return {
       params: {
@@ -128,7 +128,7 @@ export interface ParamsObj {
   id: string;
 }
 
-export async function getServerSideProps({ params }: { params: ParamsObj }) {
+export async function getStaticProps({ params }: { params: ParamsObj }) {
   const Data = actressList.find(function (actress) {
     return actress.pageUrl === params.id;
   });
